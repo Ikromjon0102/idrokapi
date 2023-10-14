@@ -23,6 +23,10 @@ class QuesTestDeleteApiView(generics.DestroyAPIView):
     queryset = Questions.objects.all()
     serializer_class = QuestionSerial
 
+class QuesTestCreateApiView(generics.ListCreateAPIView):
+    queryset = Questions.objects.all()
+    serializer_class = QuestionSerial
+
 
 # @api_view(['GET'])
 # def question_list_view(request, *args, **kwargs):
