@@ -4,7 +4,7 @@ from .views import (QuesTestApiView, QuesTestDetailApiView, QuesTestUpdateApiVie
 
 urlpatterns = [
     path('',QuesTestApiView.as_view(),),
-    path('create/',QuesTestCreateApiView.as_view(),),
+    path('testcreate/',QuesTestCreateApiView.as_view(),),
     path('<int:pk>/',QuesTestDetailApiView.as_view(),),
     path('<int:pk>/update/',QuesTestUpdateApiView.as_view(),),
     path('<int:pk>/delete/',QuesTestDeleteApiView.as_view(),),
