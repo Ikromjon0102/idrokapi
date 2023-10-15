@@ -8,6 +8,7 @@ urlpatterns = [
     path('<int:pk>/',QuesTestDetailApiView.as_view(),),
     path('<int:pk>/update/',QuesTestUpdateApiView.as_view(),),
     path('<int:pk>/delete/',QuesTestDeleteApiView.as_view(),),
+    path('',QuesTestDeleteApiView.as_view(),),
 
 
 
