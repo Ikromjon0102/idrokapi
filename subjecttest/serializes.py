@@ -6,7 +6,7 @@ class QuestionSerial(serializers.ModelSerializer):
     class Meta():
         model = Questions
         fields = ('id','subject','title','optionA','optionB','optionC','optionD',
-                  'answeroptions','levels','videolink','materiallink')
+                  'answeroptions','levels')
 
 
 class PupilSerial(serializers.ModelSerializer):

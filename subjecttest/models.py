@@ -29,7 +29,8 @@ class Subjects(models.Model):
 
 class Theme(models.Model):
     name = models.CharField(max_length=200)
-
+    videolink = models.CharField(max_length=300, default=' ')
+    materiallink = models.CharField(max_length=300, default=' ')
     def __str__(self):
         return self.name
 
@@ -75,7 +76,7 @@ class Questions(models.Model):
 
     subject = models.ForeignKey(Subjects, on_delete=models.CASCADE)
     clas = models.CharField(max_length=200, default='5-sinf')
-    theme = models.CharField(max_length=200, default='Qulay va tezkor hisoblash usullari')
+    theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     title = models.TextField()
     optionA = models.CharField(max_length=200)
     optionB = models.CharField(max_length=200)
@@ -85,9 +86,6 @@ class Questions(models.Model):
     levels = models.CharField(max_length=4,
                               choices=Levels.choices,
                               default=Levels.Easy)
-    videolink = models.CharField(max_length=300, default=' ')
-    materiallink = models.CharField(max_length=300, default=' ')
-
 
     def __str__(self):
         return self.title
