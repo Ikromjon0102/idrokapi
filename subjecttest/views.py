@@ -2,10 +2,22 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import Questions
-from .serializes import QuestionSerial
+from .models import Questions,Pupils, Parents,Teachers
+from .serializes import QuestionSerial,PupilSerial,ParentSerial,TeacherSerial
 
 from rest_framework import generics
+
+class PupilsListView(generics.ListAPIView):
+    queryset = Pupils.objects.all()
+    serializer_class = PupilSerial
+
+class TeachersListView(generics.ListAPIView):
+    queryset = Teachers.objects.all()
+    serializer_class = TeacherSerial
+
+class ParentsListView(generics.ListAPIView):
+    queryset = Parents.objects.all()
+    serializer_class = ParentSerial
 
 class QuesTestApiView(generics.ListAPIView):
     queryset = Questions.objects.all()
