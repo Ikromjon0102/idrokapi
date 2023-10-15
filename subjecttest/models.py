@@ -85,6 +85,9 @@ class Questions(models.Model):
     levels = models.CharField(max_length=4,
                               choices=Levels.choices,
                               default=Levels.Easy)
+    videolink = models.CharField(max_length=300, default=' ')
+    materiallink = models.CharField(max_length=300, default=' ')
+
 
     def __str__(self):
         return self.title

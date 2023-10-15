@@ -5,7 +5,8 @@ from .models import Teachers, Subjects, Questions, Theme,Pupils,Parents,Class,Sc
 class QuestionSerial(serializers.ModelSerializer):
     class Meta():
         model = Questions
-        fields = ('id','subject','title','optionA','optionB','optionC','optionD','answeroptions','levels')
+        fields = ('id','subject','title','optionA','optionB','optionC','optionD',
+                  'answeroptions','levels','videolink','materiallink')
 
 
 class PupilSerial(serializers.ModelSerializer):
@@ -17,6 +18,21 @@ class PupilSerial(serializers.ModelSerializer):
 class ParentSerial(serializers.ModelSerializer):
     class Meta():
         model = Parents
+        fields = ('name',)
+
+class ThemeSerial(serializers.ModelSerializer):
+    class Meta():
+        model = Theme
+        fields = ('name',)
+
+class ClassSerial(serializers.ModelSerializer):
+    class Meta():
+        model = Class
+        fields = ('title','school','teacher',)
+
+class SchoolSerial(serializers.ModelSerializer):
+    class Meta():
+        model = Schools
         fields = ('name',)
 
 class TeacherSerial(serializers.ModelSerializer):

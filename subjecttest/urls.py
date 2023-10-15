@@ -1,11 +1,12 @@
 from django.urls import path
 from .views import (QuesTestApiView, QuesTestDetailApiView, QuesTestUpdateApiView,
                     QuesTestDeleteApiView, QuesTestCreateApiView, PupilsListView,
-                    ParentsListView,TeachersListView)
+                    ParentsListView, TeachersListView, ThemeListView)
 
 urlpatterns = [
     path('',QuesTestApiView.as_view(),),
     path('teachers/',TeachersListView.as_view(),),
+    path('theme/',ThemeListView.as_view(),),
     path('pupils/',PupilsListView.as_view(),),
     path('parents/',ParentsListView.as_view(),),
     path('testcreate/',QuesTestCreateApiView.as_view(),),
